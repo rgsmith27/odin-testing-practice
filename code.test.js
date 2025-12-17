@@ -1,4 +1,10 @@
-import { capitalize, reverse, calculator } from "./code.js";
+import {
+  capitalize,
+  reverse,
+  calculator,
+  caesarCipher,
+  analyzeArray,
+} from "./code.js";
 
 test("turns apple to Apple", () => {
   expect(capitalize("apple")).toBe("Apple");
@@ -22,4 +28,22 @@ test("multiply 2 by 2", () => {
 
 test("divide 4 by 2", () => {
   expect(calculator.divide(4, 2)).toBe(2);
+});
+
+test("shift xyz by 3", () => {
+  expect(caesarCipher("xyz", 3)).toBe("abc");
+});
+
+test("shift HeLLo by 3", () => {
+  expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
+});
+
+test("shift Hello, World! by 3", () => {
+  expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
+
+test("analyzeArray", () => {
+  const arr = [1, 8, 3, 4, 2, 6];
+  const obj = analyzeArray(arr);
+  expect(obj).toEqual({ average: 4, min: 1, max: 8, length: 6 });
 });
