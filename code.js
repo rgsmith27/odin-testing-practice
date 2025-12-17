@@ -1,8 +1,9 @@
 function capitalize(str) {
-  arr = str.split("");
-  arr[0] = arr[0].toUpperCase();
-  str = arr.join("");
-  return str;
+  return str[0].toUpperCase() + str.slice(1);
 }
 
-export { capitalize };
+function reverse(str) {
+  return str.split("").reverse().join("");
+}
+
+export { capitalize, reverse };
